@@ -1,30 +1,29 @@
+// ./config/db.js
 
-//Importaciones
-
-
+// 1. IMPORTACIONES
 const mongoose = require("mongoose")
 
 
-
-
-//funciones
+// 2. FUNCIÓN
 const connectDB = async () => {
 
-    try {
-        await mongoose.connect(process.env.MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true})
-         console.log('base de datos conectada')   
-    }
-    
-    catch (error) {
+	try {
+		
+		await mongoose.connect(process.env.MONGODB_URI, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true
+		})
 
-        console.log(error)
-        return process.exit(1)
-    }
+		return console.log("Base de datos conectada.")
+
+	} catch (error) {
+		
+		console.log(error)
+		return process.exit(1)
+
+	}
 
 }
 
-//exportacion
-
+// 3. EXPORTACIÓN
 module.exports = connectDB

@@ -1,8 +1,16 @@
-//controllers
+// ./controllers/indexController.js
 
-const res = require("express/lib/response")
+// 1. CONTROLLERS
 
-exports.getHome = (req,res) => {
+exports.getHome = (req, res) => {
 
-    res.render("index")
+	res.render("index")
+
+}
+
+
+exports.getProfile = (req, res) => {
+
+	res.render("profile")
+
 }
